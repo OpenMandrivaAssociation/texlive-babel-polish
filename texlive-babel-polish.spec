@@ -1,19 +1,13 @@
-# revision 30283
-# category Package
-# catalog-ctan undef
-# catalog-date undef
-# catalog-license undef
-# catalog-version undef
 Name:		texlive-babel-polish
-Version:	1.2l
-Release:	2
+Version:	62680
+Release:	1
 Summary:	TeXLive babel-polish package
 Group:		Publishing
 URL:		http://tug.org/texlive
 License:	http://www.tug.org/texlive/LICENSE.TL
-Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-polish.tar.xz
-Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-polish.doc.tar.xz
-Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-polish.source.tar.xz
+Source0:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-polish.r62680.tar.xz
+Source1:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-polish.doc.r62680.tar.xz
+Source2:	http://mirrors.ctan.org/systems/texlive/tlnet/archive/babel-polish.source.r62680.tar.xz
 BuildArch:	noarch
 BuildRequires:	texlive-tlpkg
 Requires(pre):	texlive-tlpkg
@@ -23,24 +17,24 @@ Requires(post):	texlive-kpathsea
 TeXLive babel-polish package.
 
 %post
-    %{_sbindir}/texlive.post
+%{_sbindir}/texlive.post
 
 %postun
-    if [ $1 -eq 0 ]; then
+if [ $1 -eq 0 ]; then
 	%{_sbindir}/texlive.post
-    fi
+fi
 
 #-----------------------------------------------------------------------
 %files
-%{_texmfdistdir}/tex/generic/babel-polish/polish.ldf
-%doc %{_texmfdistdir}/doc/generic/babel-polish/polish.pdf
+%{_texmfdistdir}/tex/generic/babel-polish
+%doc %{_texmfdistdir}/doc/generic/babel-polish
 #- source
-%doc %{_texmfdistdir}/source/generic/babel-polish/polish.dtx
-%doc %{_texmfdistdir}/source/generic/babel-polish/polish.ins
+%doc %{_texmfdistdir}/source/generic/babel-polish
 
 #-----------------------------------------------------------------------
 %prep
-%setup -c -a0 -a1 -a2
+%setup -c -a1 -a2
+%autopatch -p1
 
 %build
 
