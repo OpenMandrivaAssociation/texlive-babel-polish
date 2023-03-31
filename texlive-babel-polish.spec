@@ -1,6 +1,6 @@
 Name:		texlive-babel-polish
 Version:	62680
-Release:	1
+Release:	2
 Summary:	TeXLive babel-polish package
 Group:		Publishing
 URL:		http://tug.org/texlive
